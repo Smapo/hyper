@@ -199,7 +199,7 @@ class SSLSocket(object):
             # examples I've seen.
             return tuple(
                 [
-                    (resolve_alias(k.decode('utf-8'), v.decode('utf-8')),)
+                    (resolve_alias(k.decode('utf-8')),)
                     for k, v in name.get_components()
                 ]
             )

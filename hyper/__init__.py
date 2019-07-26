@@ -22,12 +22,12 @@ if _sys.version_info < (2, 7) or (3, 0) <= _sys.version_info < (3, 3):
     )
 
 __all__ = [
-    HTTPConnection,
-    HTTP20Response,
-    HTTP20Push,
-    HTTP20Connection,
-    HTTP11Connection,
-    HTTP11Response,
+    'HTTPConnection',
+    'HTTP20Response',
+    'HTTP20Push',
+    'HTTP20Connection',
+    'HTTP11Connection',
+    'HTTP11Response',
 ]
 
 # Set default logging handler.

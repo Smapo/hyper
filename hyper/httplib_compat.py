@@ -16,7 +16,7 @@ except ImportError:
     import httplib
 
 from .compat import ssl
-from .http20.tls import wrap_socket
+from .tls import wrap_socket
 
 # If there's no NPN support, we're going to drop all support for HTTP/2.
 try:
@@ -26,7 +26,6 @@ except AttributeError:
 
 # The HTTPConnection object is currently always the underlying one.
 HTTPConnection = httplib.HTTPConnection
-HTTPSConnection = httplib.HTTPSConnection
 
 # If we have NPN support, define our custom one, otherwise just use the
 # default.
@@ -114,3 +113,5 @@ if support_20:
             self._conn = tempconn
 
             return
+else:
+    HTTPSConnection = httplib.HTTPSConnection
